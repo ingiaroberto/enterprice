@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+  push:
+    branches: [ main, develop ]
+
+permissions:
+  contents: read
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore
+        run: dotnet restore RIDA.Enterprise.sln
+
+      - name: Build
+        run: dotnet build RIDA.Enterprise.sln --configuration Release --no-restore --warnaserror
+
+      - name: Test
+        run: dotnet test RIDA.Enterprise.sln --configuration Release --no-build --logger trx --collect:"XPlat Code Coverage"
+
+      - name: Architecture preflight
+        run: ./scripts/verify-architecture.sh
+
+      - name: Verify solution and required artifacts
+        shell: bash
+        run: |
+          test -f RIDA.Enterprise.sln
+          test -f .specify/memory/constitution.md
+          test -f .specify/specs/002-create-order/spec.md
+          test -f .specify/specs/002-create-order/plan.md
+          test -f .specify/specs/002-create-order/tasks.md
+          test -f database/Order_ReferenceSchema.sql
+          test -f database/Catalog_ReferenceSchema.sql
+          test -f deploy/docker/OrderService.Dockerfile
+          test -f deploy/docker/CatalogService.Dockerfile
+          test -f deploy/docker/PaymentService.Dockerfile
+          test -f deploy/docker/InventoryService.Dockerfile
+          test -f deploy/docker/NotificationService.Dockerfile

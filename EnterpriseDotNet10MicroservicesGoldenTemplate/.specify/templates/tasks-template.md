@@ -1,0 +1,12 @@
+# Tasks
+- [ ] T001 [Domain]
+- [ ] T002 [Application]
+- [ ] T003 [Infrastructure]
+- [ ] T004 [Database]
+- [ ] T005 [API]
+- [ ] T006 [Messaging]
+- [ ] T007 [Tests]
+- [ ] T008 [Security]
+- [ ] T009 [Observability]
+- [ ] T010 [Documentation]
+- [ ] T011 [Verification/Convergence]

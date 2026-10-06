@@ -1,0 +1,20 @@
+using InventoryService.Application.Abstractions;
+using InventoryService.Infrastructure.Persistence;
+using Microsoft.Extensions.DependencyInjection;
+namespace InventoryService.Infrastructure;
+public static class DependencyInjection
+{
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services) {
+        services.AddScoped<DbSession>();
+        services.AddScoped<IInventoryRepository,Repository>();
+        services.AddScoped<IUnitOfWork,UnitOfWork>();
+        return services;
+    }
+    private sealed class UnitOfWork:IUnitOfWork {
+        private readonly DbSession _db;
+        public UnitOfWork(DbSession db)=>_db=db;
+        public Task BeginTransactionAsync(CancellationToken c)=>_db.BeginAsync(c);
+        public Task CommitAsync(CancellationToken c)=>_db.CommitAsync(c);
+        public Task RollbackAsync(CancellationToken c)=>_db.RollbackAsync(c);
+    }
+}

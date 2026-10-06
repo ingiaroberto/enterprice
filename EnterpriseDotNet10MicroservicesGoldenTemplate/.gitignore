@@ -1,0 +1,45 @@
+# Build output
+**/bin/
+**/obj/
+**/TestResults/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+appsettings.Local.json
+appsettings.*.Local.json
+*.pfx
+*.p12
+*.key
+*.pem
+
+# Docker local state
+**/.docker/
+
+# Generated artifacts
+artifacts/
+packages/
+
+# Spec Kit local transient data
+.specify/local/

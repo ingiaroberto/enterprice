@@ -1,0 +1,21 @@
+name: Bug
+description: Report a defect with enough evidence to reproduce it.
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: input
+    id: work-item
+    attributes:
+      label: Work item
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What happened and what was expected?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Logs, trace ID, environment, request ID, screenshots, etc.

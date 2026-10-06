@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <ProjectReference Include="../OrderService.Application/OrderService.Application.csproj"/>
+    <ProjectReference Include="../OrderService.Infrastructure/OrderService.Infrastructure.csproj"/>
+    <ProjectReference Include="../BuildingBlocks/Enterprise.Observability/Enterprise.Observability.csproj"/>
+    <ProjectReference Include="../BuildingBlocks/Enterprise.Security/Enterprise.Security.csproj"/>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi"/>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+{
+  "eventType": "order.created.v1",
+  "fields": {
+    "eventId": "uuid",
+    "orderId": "uuid",
+    "categoryId": "uuid",
+    "categoryName": "string",
+    "createdAtUtc": "datetime"
+  }
+}

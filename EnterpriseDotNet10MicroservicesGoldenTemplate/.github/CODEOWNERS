@@ -1,0 +1,11 @@
+# Replace placeholders with the real GitHub teams/users before enabling required reviews.
+
+* @enterprise-platform
+
+/.github/ @enterprise-platform
+/.specify/ @enterprise-architecture
+/docs/architecture/ @enterprise-architecture
+/docs/adr/ @enterprise-architecture
+/database/ @enterprise-dba
+/src/BuildingBlocks/ @enterprise-platform
+/src/Services/Catalog/ @enterprise-catalog

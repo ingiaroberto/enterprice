@@ -1,0 +1,11 @@
+[PASS] Solution
+[PASS] Five services
+[PASS] Five unit-test projects
+[PASS] Five Dockerfiles
+[PASS] Five SQL reference contracts
+[PASS] No placeholders
+[PASS] Order contract uses CategoryId
+[PASS] Transactional Outbox
+[PASS] Typed HttpClient + resilience
+[PASS] Rate limiting
+[PASS] Production auth gate

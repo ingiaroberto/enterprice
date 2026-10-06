@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../NotificationService.Domain/NotificationService.Domain.csproj"/>
+    <PackageReference Include="MediatR"/>
+    <PackageReference Include="FluentValidation"/>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions"/>
+  </ItemGroup>
+</Project>

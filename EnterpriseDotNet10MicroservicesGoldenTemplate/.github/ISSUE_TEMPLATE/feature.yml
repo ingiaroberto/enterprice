@@ -1,0 +1,26 @@
+name: Feature / User Story
+description: Create a traceable feature that must pass the Spec-Driven workflow.
+title: "[FEATURE] "
+labels: ["feature"]
+body:
+  - type: input
+    id: work-item
+    attributes:
+      label: Work item
+      description: Jira / Azure Boards / corporate tracking ID.
+    validations:
+      required: true
+  - type: textarea
+    id: requirement
+    attributes:
+      label: Requirement
+      description: Describe the business problem and expected outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List objective acceptance criteria.
+    validations:
+      required: true

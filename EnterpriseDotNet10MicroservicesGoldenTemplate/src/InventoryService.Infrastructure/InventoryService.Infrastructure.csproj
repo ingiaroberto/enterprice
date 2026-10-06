@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../InventoryService.Application/InventoryService.Application.csproj"/>
+    <PackageReference Include="Dapper"/>
+    <PackageReference Include="Microsoft.Data.SqlClient"/>
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks"/>
+  </ItemGroup>
+</Project>

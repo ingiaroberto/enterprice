@@ -1,0 +1,2 @@
+CREATE OR ALTER PROCEDURE dbo.usp_Category_Create @Id uniqueidentifier,@Name nvarchar(150),@Description nvarchar(500)=NULL,@IsActive bit,@CreatedAtUtc datetime2(7) AS BEGIN SET NOCOUNT ON; IF EXISTS(SELECT 1 FROM dbo.Category WHERE Name=@Name) THROW 50001,'CATEGORY_ALREADY_EXISTS',1; INSERT dbo.Category(Id,Name,Description,IsActive,CreatedAtUtc) VALUES(@Id,@Name,@Description,@IsActive,@CreatedAtUtc); END;
+GO

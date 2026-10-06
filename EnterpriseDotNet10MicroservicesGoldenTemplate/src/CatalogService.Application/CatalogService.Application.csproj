@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../CatalogService.Domain/CatalogService.Domain.csproj"/>
+    <PackageReference Include="MediatR"/>
+    <PackageReference Include="FluentValidation"/>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions"/>
+  </ItemGroup>
+</Project>
